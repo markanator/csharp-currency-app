@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCurrency", "WPFCurrency\WPFCurrency.csproj", "{F982810B-BE3D-4FFE-99AB-88119817D8E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFCurrency", "WPFCurrency\WPFCurrency.csproj", "{F982810B-BE3D-4FFE-99AB-88119817D8E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{EA9202AE-1735-46EE-8E08-025EA9C535BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{EA9202AE-1735-46EE-8E08-025EA9C535BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyLib", "CurrencyLib\CurrencyLib.csproj", "{78BEB946-35B7-4953-B338-2E42A711B3A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyLib", "CurrencyLib\CurrencyLib.csproj", "{78BEB946-35B7-4953-B338-2E42A711B3A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
