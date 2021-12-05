@@ -139,7 +139,7 @@ namespace Tests.MXCoinsTests
             Assert.AreEqual((double)((decimal)valueOrig - (decimal)nickel.MonetaryValue), valueAfterPenny);
             Assert.AreEqual(valueAfterPenny - (numPennies * nickel.MonetaryValue), valueAfterFiveMorePennies);
 
-            //Assert.AreEqual(valueAfterFiveMorePennies - nickel.MonetaryValue, valueAfterNickel); //HUH? 1.35 != 1.35 both are double?
+            Assert.AreEqual((double)((decimal)valueAfterFiveMorePennies - (decimal)nickel.MonetaryValue), valueAfterNickel); //HUH? 1.35 != 1.35 both are double?
             Assert.AreEqual(valueAfterNickel - dime.MonetaryValue, valueAfterDime);
             Assert.AreEqual(valueAfterDime - twentyCent.MonetaryValue, valueAfterQuarter);
             Assert.AreEqual(valueAfterQuarter - onePeso.MonetaryValue, valueAfterDollar);

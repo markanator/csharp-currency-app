@@ -1,4 +1,5 @@
-﻿using CurrencyLib.Interfaces;
+﻿// using makeChane implementation from class demo
+using CurrencyLib.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
