@@ -1,4 +1,4 @@
-﻿namespace CurrencyLib
+﻿namespace CurrencyLib.US
 {
     public enum USCoinMintMark
     {

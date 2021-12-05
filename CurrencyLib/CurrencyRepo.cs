@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CurrencyLib.Interfaces;
+using CurrencyLib.US;
 
 
 namespace CurrencyLib

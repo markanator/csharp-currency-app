@@ -1,7 +1,7 @@
-﻿using System;
-using CurrencyLib;
+﻿using CurrencyLib;
 using CurrencyLib.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Tests
 {
@@ -14,8 +14,6 @@ namespace Tests
         Dime dime;
         Quarter quarter;
         DollarCoin dollarCoin;
-
-
         public CurrencyRepoTests()
         {
             repo = new CurrencyRepo();
@@ -25,7 +23,6 @@ namespace Tests
             quarter = new Quarter();
             dollarCoin = new DollarCoin();
         }
-
         [TestMethod]
         public void AddCoinTest()
         {
@@ -74,8 +71,6 @@ namespace Tests
             Assert.AreEqual(valueAfterQuarter + dollarCoin.MonetaryValue, valueAfterDollar);
 
         }
-
-
         [TestMethod]
         public void RemoveCoinTest()
         {
@@ -139,16 +134,15 @@ namespace Tests
             Assert.AreEqual(valueAfterQuarter - dollarCoin.MonetaryValue, valueAfterDollar);
 
         }
-
         [TestMethod]
         public void MakeChangeTests()
         {
             //Arrange
-            CurrencyRepo    changeOneQuatersOnHalfDollar, 
-                            changeTwoDollars, 
+            CurrencyRepo changeOneQuatersOnHalfDollar,
+                            changeTwoDollars,
                             changeOneDollarOneHalfDoller,
-                            changeOneDimeOnePenny, 
-                            changeOneNickelOnePenny, 
+                            changeOneDimeOnePenny,
+                            changeOneNickelOnePenny,
                             changeFourPennies;
 
 
@@ -164,8 +158,8 @@ namespace Tests
 
             //Assert
             Assert.AreEqual(2, changeTwoDollars.Coins.Count);
-            Assert.AreEqual(new DollarCoin().GetType(),changeTwoDollars.Coins[0].GetType());
-            Assert.AreEqual(new DollarCoin().GetType(),changeTwoDollars.Coins[1].GetType());
+            Assert.AreEqual(new DollarCoin().GetType(), changeTwoDollars.Coins[0].GetType());
+            Assert.AreEqual(new DollarCoin().GetType(), changeTwoDollars.Coins[1].GetType());
 
             Assert.AreEqual(changeOneDollarOneHalfDoller.Coins.Count, 3);
             Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[0].GetType(), new DollarCoin().GetType());

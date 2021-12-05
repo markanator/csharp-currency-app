@@ -1,4 +1,6 @@
-﻿namespace CurrencyLib
+﻿using CurrencyLib.US;
+
+namespace CurrencyLib
 {
     public class Nickel : USCoin
     {

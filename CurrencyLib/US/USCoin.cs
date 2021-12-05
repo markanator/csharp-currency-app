@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CurrencyLib
+namespace CurrencyLib.US
 {
     public abstract class USCoin : Coin
     {

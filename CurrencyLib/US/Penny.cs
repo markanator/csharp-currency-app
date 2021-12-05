@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CurrencyLib.US;
+using System;
 
 namespace CurrencyLib
 {
