@@ -62,7 +62,6 @@ namespace CurrencyLib
             }
             return retCurrencyRepo;
         }
-
         private void InsertInto(USCoin coin, int times, ICurrencyRepo repo)
         {
             for (int i = 0; i < times; i++)
@@ -70,7 +69,6 @@ namespace CurrencyLib
                 repo.Coins.Add(coin);
             }
         }
-
         private double RemoveFrom(decimal src, int times, decimal toRemove)
         {
             for (int i = 0; i < times; i++)
@@ -80,7 +78,6 @@ namespace CurrencyLib
 
             return (double)src;
         }
-        
         public ICurrencyRepo CreateChange(double AmountTendered, double TotalCost)
         {
             throw new NotImplementedException();
@@ -93,7 +90,7 @@ namespace CurrencyLib
         }
         public ICurrencyRepo MakeChange(double Amount)
         {
-            throw new System.NotImplementedException();
+            return MakeChange(Amount, 0);
         }
         public ICurrencyRepo MakeChange(double AmountTendered, double TotalCost)
         {

@@ -8,7 +8,7 @@ namespace CurrencyLib.MX
 {
     public abstract class MXCoin : Coin
     {
-        public MXCoin()
+        public MXCoin() : base()
         {
             this.Year = DateTime.Now.Year;
         }
