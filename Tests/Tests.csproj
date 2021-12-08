@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CurrencyLib\CurrencyLib.csproj" />
+    <ProjectReference Include="..\CurrencyLibs\CurrencyLibs.csproj" />
   </ItemGroup>
 
 </Project>

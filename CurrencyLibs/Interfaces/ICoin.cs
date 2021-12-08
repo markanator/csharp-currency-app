@@ -1,4 +1,4 @@
-﻿namespace CurrencyLib.Interfaces
+﻿namespace CurrencyLibs.Interfaces
 {
     public interface ICoin : ICurrency
     {

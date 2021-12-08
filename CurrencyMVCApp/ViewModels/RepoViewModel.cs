@@ -1,11 +1,11 @@
-﻿using CurrencyLib.Interfaces;
+﻿using CurrencyLibs.Interfaces;
 using System.Collections.Generic;
 
 namespace CurrencyMVCApp.ViewModels
 {
     public class RepoViewModel
     {
-        ICurrencyRepo repo;
+        public ICurrencyRepo repo { get; protected set; }
         public RepoViewModel(ICurrencyRepo repo)
         {
             this.repo = repo;

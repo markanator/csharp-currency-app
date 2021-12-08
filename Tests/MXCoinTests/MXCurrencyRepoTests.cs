@@ -1,5 +1,5 @@
-﻿using CurrencyLib;
-using CurrencyLib.MX;
+﻿using CurrencyLibs;
+using CurrencyLibs.MX;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -169,30 +169,30 @@ namespace Tests.MXCoinsTests
 
             //Assert
             Assert.AreEqual(2, changeTwoDollars.Coins.Count);
-            Assert.AreEqual(new DollarCoin().GetType(), changeTwoDollars.Coins[0].GetType());
-            Assert.AreEqual(new DollarCoin().GetType(), changeTwoDollars.Coins[1].GetType());
+            Assert.AreEqual(new _1PesoCoin().GetType(), changeTwoDollars.Coins[0].GetType());
+            Assert.AreEqual(new _1PesoCoin().GetType(), changeTwoDollars.Coins[1].GetType());
 
             Assert.AreEqual(changeOneDollarOneHalfDoller.Coins.Count, 3);
-            Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[0].GetType(), new DollarCoin().GetType());
+            Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[0].GetType(), new _1PesoCoin().GetType());
 
 
             Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins.Count, 3);
-            Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[1].GetType(), new Quarter().GetType());
+            Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[1].GetType(), new _20Centavos().GetType());
 
             Assert.AreEqual(changeOneDimeOnePenny.Coins.Count, 2);
-            Assert.AreEqual(changeOneDimeOnePenny.Coins[0].GetType(), new Dime().GetType());
-            Assert.AreEqual(changeOneDimeOnePenny.Coins[1].GetType(), new Penny().GetType());
+            Assert.AreEqual(changeOneDimeOnePenny.Coins[0].GetType(), new _5Centavos().GetType());
+            Assert.AreEqual(changeOneDimeOnePenny.Coins[1].GetType(), new _5Centavos().GetType());
 
             Assert.AreEqual(changeOneNickelOnePenny.Coins.Count, 2);
-            Assert.AreEqual(changeOneNickelOnePenny.Coins[0].GetType(), new Nickel().GetType());
-            Assert.AreEqual(changeOneNickelOnePenny.Coins[1].GetType(), new Penny().GetType());
+            Assert.AreEqual(changeOneNickelOnePenny.Coins[0].GetType(), new _5Centavos().GetType());
+            Assert.AreEqual(changeOneNickelOnePenny.Coins[1].GetType(), new _5Centavos().GetType());
 
 
             Assert.AreEqual(changeFourPennies.Coins.Count, 4);
-            Assert.AreEqual(changeFourPennies.Coins[0].GetType(), new Penny().GetType());
-            Assert.AreEqual(changeFourPennies.Coins[1].GetType(), new Penny().GetType());
-            Assert.AreEqual(changeFourPennies.Coins[2].GetType(), new Penny().GetType());
-            Assert.AreEqual(changeFourPennies.Coins[3].GetType(), new Penny().GetType());
+            Assert.AreEqual(changeFourPennies.Coins[0].GetType(), new _5Centavos().GetType());
+            Assert.AreEqual(changeFourPennies.Coins[1].GetType(), new _5Centavos().GetType());
+            Assert.AreEqual(changeFourPennies.Coins[2].GetType(), new _5Centavos().GetType());
+            Assert.AreEqual(changeFourPennies.Coins[3].GetType(), new _5Centavos().GetType());
 
         }
     }

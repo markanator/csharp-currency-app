@@ -1,5 +1,5 @@
-using CurrencyLib;
-using CurrencyLib.US;
+using CurrencyLibs;
+using CurrencyLibs.US;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests

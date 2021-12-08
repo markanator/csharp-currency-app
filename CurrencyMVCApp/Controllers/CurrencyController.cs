@@ -1,5 +1,6 @@
-﻿using CurrencyLib.Interfaces;
-using CurrencyLib.MX;
+﻿using CurrencyLibs.Interfaces;
+using CurrencyLibs.MX;
+using CurrencyLibs;
 using CurrencyMVCApp.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,8 +12,8 @@ namespace CurrencyMVCApp.Controllers
 {
     public class CurrencyController : Controller
     {
-        ICurrencyRepo repo { get; set; }
-        RepoViewModel viewModel { get; set; }
+        public ICurrencyRepo repo;
+        public RepoViewModel viewModel;
         private readonly ILogger<CurrencyController> _logger;
 
         public CurrencyController(ILogger<CurrencyController> logger)
@@ -25,6 +26,7 @@ namespace CurrencyMVCApp.Controllers
         // GET: CurrencyController
         public ActionResult Index()
         {
+            _logger.LogInformation(viewModel.TotalValue.ToString());
             return View(viewModel);
         }
 
@@ -41,7 +43,7 @@ namespace CurrencyMVCApp.Controllers
             if (amount > 0)
             {
                 _logger.LogInformation(amount.ToString());
-                viewModel.MakeChange(Convert.ToDouble(amount));
+                viewModel.MakeChange(amount);
             }
             return RedirectToAction(nameof(this.Index));
         }

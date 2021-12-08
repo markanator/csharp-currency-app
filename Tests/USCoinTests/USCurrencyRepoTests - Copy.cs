@@ -1,7 +1,8 @@
-﻿using CurrencyLib;
-using CurrencyLib.Interfaces;
+﻿using CurrencyLibs.US;
+using CurrencyLibs.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using CurrencyLibs;
 
 namespace Tests
 {

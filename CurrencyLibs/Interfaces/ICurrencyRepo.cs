@@ -1,0 +1,18 @@
+﻿using System.Collections.Generic;
+using CurrencyLibs;
+
+namespace CurrencyLibs.Interfaces
+{
+    public interface ICurrencyRepo
+    {
+        public List<ICoin> Coins { get; set; }
+        public string About();
+        public void AddCoin(ICoin c);
+        public int GetCoinCount();
+        List<ICurrency> getCurrencyList();
+        public ICurrencyRepo MakeChange(double Amount);
+        public ICurrencyRepo MakeChange(double AmountTendered, double TotalCost);
+        public ICoin RemoveCoin(ICoin c);
+        public double TotalValue();
+    }
+}
