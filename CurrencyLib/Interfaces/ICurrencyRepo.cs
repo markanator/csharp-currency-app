@@ -8,6 +8,7 @@ namespace CurrencyLib.Interfaces
         public string About();
         public void AddCoin(ICoin c);
         public int GetCoinCount();
+        List<ICurrency> getCurrencyList();
         public ICurrencyRepo MakeChange(double Amount);
         public ICurrencyRepo MakeChange(double AmountTendered, double TotalCost);
         public ICoin RemoveCoin(ICoin c);

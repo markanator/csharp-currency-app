@@ -11,7 +11,7 @@ namespace CurrencyLib.MX
         public _10PesoCoin()
         {
             this.MonetaryValue = 10.00;
-            this.Name = "10 Peso";
+            this.Name = "$10 Pesos";
         }
     }
 }

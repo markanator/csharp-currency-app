@@ -109,5 +109,10 @@ namespace CurrencyLib
             this.Coins.ForEach(coin => totalval += coin.MonetaryValue);
             return totalval;
         }
+
+        public List<ICurrency> getCurrencyList()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

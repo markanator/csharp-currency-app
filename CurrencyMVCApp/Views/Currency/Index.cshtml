@@ -1,0 +1,31 @@
+﻿@model CurrencyMVCApp.ViewModels.RepoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>MXCurrencyRepo</h1>
+<hr />
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Coin Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var coin in Model.Coins)
+            {
+                <tr>
+                    <td>@coin.Name</td>
+                    <td>@coin.MonetaryValue.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

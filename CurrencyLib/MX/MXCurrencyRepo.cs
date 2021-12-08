@@ -38,7 +38,7 @@ namespace CurrencyLib.MX
             this.Coins.ForEach(coin => totalCoins += 1);
             return totalCoins;
         }
-        private List<ICurrency> getCurrencyList()
+        public List<ICurrency> getCurrencyList()
         {
             List<ICurrency> list = new List<ICurrency>()
             {
@@ -52,7 +52,8 @@ namespace CurrencyLib.MX
                 new _5Centavos(),
             };
 
-            return list.OrderByDescending(c => c.MonetaryValue).ToList();
+            list.OrderByDescending(c => c.MonetaryValue).ToList();
+            return list;
         }
         public ICurrencyRepo MakeChange(double Amount)
         {
@@ -63,7 +64,7 @@ namespace CurrencyLib.MX
             MXCurrencyRepo _change = new MXCurrencyRepo();
             Decimal Change = (Decimal)AmountTendered - (Decimal)TotalCost;
 
-            List<ICurrency> currencyList = getCurrencyList();
+            List<ICurrency> currencyList = this.getCurrencyList();
             foreach (MXCoin c in currencyList)
             {
                 while (Change >= (Decimal)c.MonetaryValue)
