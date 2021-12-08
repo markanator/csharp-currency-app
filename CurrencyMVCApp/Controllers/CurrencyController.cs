@@ -7,30 +7,30 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Globalization;
 using System;
+using CurrencyMVCApp.Models;
+using System.Diagnostics;
 
 namespace CurrencyMVCApp.Controllers
 {
     public class CurrencyController : Controller
     {
-        public ICurrencyRepo repo;
+        public ICurrencyRepo controllerRepo;
         public RepoViewModel viewModel;
-        private readonly ILogger<CurrencyController> _logger;
 
-        public CurrencyController(ILogger<CurrencyController> logger)
+        public CurrencyController(ICurrencyRepo repo)
         {
-            _logger = logger;
-            repo = new MXCurrencyRepo();
-            viewModel = new RepoViewModel(repo);
+            //_logger = logger;
+            controllerRepo = repo;
+            viewModel = new RepoViewModel(controllerRepo);
         }
 
         // GET: CurrencyController
         public ActionResult Index()
         {
-            _logger.LogInformation(viewModel.TotalValue.ToString());
             return View(viewModel);
         }
 
-        // GET: CurrencyController/Details/5
+        // GET: CurrencyController/MakeChange
         public ActionResult MakeChange()
         {
             return View(viewModel);
@@ -38,14 +38,13 @@ namespace CurrencyMVCApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult MakeChange(double amount)
+        public ActionResult MakeChange(double? amount)
         {
-            if (amount > 0)
+            if (amount != null && amount > 0)
             {
-                _logger.LogInformation(amount.ToString());
-                viewModel.MakeChange(amount);
+                viewModel.MakeChange((double)amount);
             }
-            return RedirectToAction(nameof(this.Index));
+            return View(viewModel);
         }
     }
 }

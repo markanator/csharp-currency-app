@@ -1,4 +1,8 @@
+using CurrencyLibs.Interfaces;
+using CurrencyLibs.MX;
 using Microsoft.AspNetCore.Builder;
+// DI help from Julio C. tutorial @ https://www.youtube.com/watch?v=n7jmIG-0ORc
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -23,8 +27,9 @@ namespace CurrencyMVCApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ICurrencyRepo, MXCurrencyRepo>();
+
             services.AddControllersWithViews();
-            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +45,6 @@ namespace CurrencyMVCApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

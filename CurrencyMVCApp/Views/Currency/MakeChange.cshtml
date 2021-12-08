@@ -7,13 +7,15 @@
 <h1>MakeChange</h1>
 <hr />
 <div>
-    <form asp-action='MakeChange' class='d-flex align-items-center'>
+    <form class='d-flex align-items-center' asp-controller='Currency' asp-action='MakeChange' method='post'>
         <div class="form-group">
             <label htmlfor="Amount" class="control-label"></label>
-            <input name="Amount"  type="number" step="0.01" class="form-control" />
+            <input name="Amount" id="amountInput" type="number" step="0.01" class="form-control" 
+                value="@Html.DisplayFor(c => c.TotalValue)"
+            />
         </div>
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary" />
+            <input type="submit" value="Save" id='testBtn' class="btn btn-primary" />
         </div>
     </form>
     <dl class="row">
@@ -26,9 +28,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("Coins List", "Index", "Currency")
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

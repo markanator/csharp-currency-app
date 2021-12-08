@@ -5,7 +5,7 @@ namespace CurrencyMVCApp.ViewModels
 {
     public class RepoViewModel
     {
-        public ICurrencyRepo repo { get; protected set; }
+        public ICurrencyRepo repo;
         public RepoViewModel(ICurrencyRepo repo)
         {
             this.repo = repo;
@@ -18,7 +18,8 @@ namespace CurrencyMVCApp.ViewModels
 
         public void MakeChange(double Amount)
         {
-            repo = repo.MakeChange(Amount);
+            var newRepo = repo.MakeChange(Amount);
+            this.repo.Coins = newRepo.Coins;
         }
 
         public List<ICoin> Coins
